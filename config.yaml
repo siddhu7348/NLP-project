@@ -1,3 +1,6 @@
+# ---- LLM settings -------------------------------------------------
+# Any OpenAI-compatible provider works. Default: Google Gemini.
+# fallback_models are tried in order if the main model is busy (503/429) or unavailable (404).
 llm:
   provider_name: gemini
   base_url: https://generativelanguage.googleapis.com/v1beta/openai/
@@ -11,12 +14,14 @@ llm:
   max_tokens: 1200
   timeout_seconds: 60
 
+# ---- Prompt files -------------------------------------------------
 prompts:
   system: prompts/system_prompt.txt
   user: prompts/user_prompt.txt
 
+# ---- Screening rules ----------------------------------------------
 screening:
   max_resume_chars: 12000
   max_jd_chars: 6000
-  shortlist_threshold: 70
-  max_retries: 1
+  shortlist_threshold: 70    # score >= 70 -> Shortlist, >= 50 -> Maybe, else Reject
+  max_retries: 1             # retries if the model returns invalid JSON

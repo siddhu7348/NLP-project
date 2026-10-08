@@ -64,10 +64,14 @@ def screen_resume(resume_text: str, job_description: str, cfg: dict) -> dict:
     )
 
     last_error = None
+    raw = ""
     for _ in range(rules.get("max_retries", 1) + 1):
         raw = llm_client.chat(cfg, system_prompt, user_prompt)
         try:
             return _clean(_extract_json(raw), rules["shortlist_threshold"])
         except (ValueError, json.JSONDecodeError) as err:
             last_error = err
-    raise ValueError(f"Could not parse model output as JSON: {last_error}")
+    raise ValueError(
+        f"Could not parse model output as JSON: {last_error}. "
+        f"Raw output started with: {raw[:300]!r}"
+    )

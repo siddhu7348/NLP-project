@@ -83,8 +83,6 @@ Example response:
 ```
 To upload a PDF instead, send `POST /screen/upload` with the form fields `resume_file` (file) and `job_description` (text).
 
-## Run in Google Colab
-Open `notebooks/resume_screener_colab.ipynb` in Colab. Add your key under the key icon (Secrets) with the name `GEMINI_API_KEY`, then run the cells from top to bottom.
 
 ## Configuration (`config.yaml`)
 | Setting | Purpose |
