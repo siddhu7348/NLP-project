@@ -1,5 +1,6 @@
 """FastAPI service.  Run:  uvicorn app:app --reload   then open http://127.0.0.1:8000/docs"""
 from fastapi import FastAPI, File, Form, HTTPException, UploadFile
+from fastapi.responses import RedirectResponse
 from pydantic import BaseModel
 
 from src.config import load_config
@@ -24,6 +25,12 @@ def _run(resume_text: str, job_description: str) -> dict:
         raise HTTPException(status_code=500, detail=str(err))
     except Exception as err:  # upstream LLM/API failure
         raise HTTPException(status_code=502, detail=f"LLM call failed: {err}")
+
+
+@app.get("/", include_in_schema=False)
+def root():
+    """Send the home address to the interactive API page."""
+    return RedirectResponse(url="/docs")
 
 
 @app.get("/health")

@@ -32,15 +32,20 @@ def chat(cfg: dict, system_prompt: str, user_prompt: str) -> str:
     last_error = None
     for model in models:
         try:
-            response = get_client(cfg).chat.completions.create(
+            kwargs = dict(
                 model=model,
-                temperature=llm.get("temperature", 0.2),
-                max_tokens=llm.get("max_tokens", 1200),
+                temperature=llm.get("temperature", 0),
+                max_tokens=llm.get("max_tokens", 2500),
                 messages=[
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt},
                 ],
             )
+            # JSON mode only for Gemini models (Gemma etc. may reject it)
+            if model.startswith("gemini"):
+                kwargs["response_format"] = {"type": "json_object"}
+
+            response = get_client(cfg).chat.completions.create(**kwargs)
             return response.choices[0].message.content or ""
         except APIStatusError as err:
             if err.status_code in (404, 429, 500, 502, 503, 504):

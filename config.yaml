@@ -11,7 +11,7 @@ llm:
     - gemini-3.1-flash-lite
     - gemini-3.5-flash-lite
   temperature: 0.2
-  max_tokens: 1200
+  max_tokens: 5000
   timeout_seconds: 60
 
 # ---- Prompt files -------------------------------------------------
