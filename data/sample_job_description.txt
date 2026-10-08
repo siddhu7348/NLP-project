@@ -1,0 +1,17 @@
+Job Title: Machine Learning Engineer (Entry Level)
+
+We are looking for a Machine Learning Engineer to join our data team.
+
+Responsibilities:
+- Build, train and evaluate machine learning models using Python
+- Create data pipelines and clean large datasets
+- Deploy models as REST APIs
+- Collaborate with the team using Git and GitHub
+
+Requirements:
+- Bachelor's degree in Computer Science, Data Science or related field
+- Strong Python skills (pandas, NumPy, scikit-learn)
+- Experience with SQL
+- Knowledge of deep learning (PyTorch or TensorFlow)
+- Experience deploying models with Flask or FastAPI
+- Familiarity with Docker and cloud platforms (AWS/GCP) is a plus

@@ -1,0 +1,9 @@
+Evaluate the following resume against the job description.
+
+=== JOB DESCRIPTION ===
+{job_description}
+
+=== RESUME ===
+{resume}
+
+Return only the JSON object described in your instructions.

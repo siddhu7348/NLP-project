@@ -1,0 +1,22 @@
+ALEX SHARMA
+alex.sharma@example.com | github.com/alexsharma | Jaipur, India
+
+EDUCATION
+B.Tech in Data Science and Engineering, 2022 - 2026 (expected)
+
+SKILLS
+Python, pandas, NumPy, scikit-learn, SQL (MySQL), Flask, Git/GitHub, Matplotlib, basic TensorFlow
+
+PROJECTS
+Fire Weather Index Predictor
+- Built a regression pipeline with scikit-learn and deployed it as a Flask web app.
+
+Customer Churn Prediction
+- Cleaned and analysed a 50k-row dataset with pandas; trained random forest and logistic regression models; reached 87% accuracy.
+
+Phishing URL Detection
+- Built an end-to-end ML pipeline with experiment tracking in MLflow and a small FastAPI service.
+
+INTERNSHIP
+Data Analyst Intern, 2 months
+- Wrote SQL queries and built dashboards for weekly sales reporting.

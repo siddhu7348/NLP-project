@@ -1,0 +1,22 @@
+llm:
+  provider_name: gemini
+  base_url: https://generativelanguage.googleapis.com/v1beta/openai/
+  api_key_env: GEMINI_API_KEY
+  model: gemini-3.8-flash
+  fallback_models:
+    - gemini-3.5-flash
+    - gemini-3.1-flash-lite
+    - gemini-3.5-flash-lite
+  temperature: 0.2
+  max_tokens: 1200
+  timeout_seconds: 60
+
+prompts:
+  system: prompts/system_prompt.txt
+  user: prompts/user_prompt.txt
+
+screening:
+  max_resume_chars: 12000
+  max_jd_chars: 6000
+  shortlist_threshold: 70
+  max_retries: 1
